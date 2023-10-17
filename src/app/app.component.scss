@@ -1,0 +1,176 @@
+// Common CSS
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.input {
+  width: calc(100% - 20px);
+  border: none !important;
+  padding: 10px;
+  font-size: 15px;
+  color: #3e6589;
+}
+
+input:focus {
+  outline: none;
+  background-color: #a5c0df;
+  color: #3e6589;
+}
+
+button:disabled {
+  background-color: white;
+  color: #052542;
+  cursor: auto;
+  border: 1px solid #052542;
+}
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+  text-decoration: solid;
+  margin-bottom: 10px;
+}
+
+.input-label {
+  color: #052542;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.mgr8 {
+  margin-right: 8px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+// Individual CSS
+.main-comp {
+  display: flex;
+  background-color: #e0ecf2;
+  height: 100%;
+}
+
+.left-section {
+  width: calc(40vw - 2px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 4%;
+  border-right: 2px dashed #052542;
+}
+
+.left-header {
+  font-size: 18px;
+  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 5px;
+}
+
+.form-input {
+  margin-bottom: 10px;
+}
+
+.form-button {
+  display: flex;
+  align-self: center;
+  width: 30%;
+  font-size: 15px;
+}
+
+.submit-btn {
+  background-color: #052542;
+  color: #e0ecf2;
+  padding: 12px 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #052542;
+}
+
+.right-section {
+  width: 60vw;
+  height: 92%;
+  padding: 2% 4%;
+  overflow-y: scroll;
+}
+
+.comment-header {
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-container {
+  background-color: #a5c0df;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+.main-comment-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-time-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px 5px;
+}
+
+.author-div {
+  font-size: 18px;
+}
+
+.time-div {
+  color: #7a9ec7;
+  font-size: 12px;
+}
+
+.comment-div {
+  padding: 2px 15px 5px;
+  color: #3e6589;
+}
+
+.comment-actions {
+  font-size: 15px;
+  color: #3e6589;
+  display: flex;
+  padding: 2px 15px;
+}
+
+.comment-actions {
+  padding-bottom: 10px;
+}
+
+.replies-section {
+  padding: 2px 15px 5px;
+}
+
+.reply-container {
+  background-color: #e0ecf2;
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+
+.reply-author-div {
+  color: #3e6589;
+}
+
+.reply-div {
+  font-size: 15px;
+  color: #7a9ec7;
+}

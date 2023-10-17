@@ -1,0 +1,84 @@
+<div class="main-comp">
+  <div class="left-section">
+    <div class="left-header">
+      {{heading | uppercase}}
+    </div>
+    <div class="form-input">
+      <form [formGroup]="commentForm">
+        <div class="name input-div">
+          <label class="input-label">
+            Name:
+          </label>
+          <input type="text" class="input" formControlName="name" placeholder="Jane Doe">
+        </div>
+
+        <div class="comment input-div">
+          <label class="input-label">
+            Comment:
+          </label>
+          <input type="text" class="input" formControlName="comment" placeholder="I would like to say...">
+        </div>
+      </form>
+    </div>
+
+    <div class="form-button">
+      <button class="submit-btn pointer" [disabled]="commentForm.invalid" (click)="post()">
+        Post
+      </button>
+    </div>
+  </div>
+
+  <div class="right-section">
+    <div class="comment-header underline">
+      JOIN THE DISCUSSION...
+    </div>
+
+    <div *ngIf="comments?.length" class="comments-section">
+      <div class="comment-container" *ngFor="let comment of comments; index as i">
+        <div class="main-comment-section">
+          <div class="comment-section">
+            <div class="author-time-div">
+              <div class="author-div">
+                {{comment.name | uppercase}}
+              </div>
+  
+              <div class="time-div">
+                {{comment.time | date:'medium'}}
+              </div>
+            </div>
+  
+            <div class="comment-div">
+              {{comment.comment}}
+            </div>
+          </div>
+  
+          <div class="comment-actions">
+            <div class="edit-comment underline mgr8 pointer" (click)="editComment(i, comment)">
+              Edit
+            </div>
+
+            <div class="reply-to underline mgr8 pointer" (click)="openReply(i)">
+              Reply
+            </div>
+
+            <div class="toggle-reply underline pointer" *ngIf="comment.replies?.length" (click)="comment.showReply = !comment.showReply">
+              {{comment.showReply ? 'Hide replies' : 'Show replies'}}
+            </div>
+          </div>
+  
+          <div *ngIf="comment.showReply" class="replies-section">
+            <div  class="reply-container" *ngFor="let reply of comment.replies">
+              <div class="reply-author-div">
+                {{reply.name | uppercase}}
+              </div>
+    
+              <div class="reply-div">
+                {{reply.reply}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
